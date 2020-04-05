@@ -41,11 +41,12 @@ namespace kalkulator
             if (result_tb.Text == '∞'.ToString() || result_tb.Text == "NaN" || result_tb.Text == "Podano zbyt dużą liczbę")
                 result_tb.Clear();
 
-
             int contentLenght = result_tb.Text.Length;
             char previousSymbol = ' ';
             if (contentLenght != 0)
                 previousSymbol = result_tb.Text[contentLenght - 1];
+            else if (result_tb.Text.Contains(","))
+                canWriteDot = false;
             else
                 canWriteDot = true;
             bool canWriteSymbol = contentLenght > 0 && previousSymbol >= '0' && previousSymbol <= '9';

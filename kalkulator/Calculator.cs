@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Globalization;
 
 namespace kalkulator
 {
@@ -161,7 +161,7 @@ namespace kalkulator
                     }
                     i++;
                 }
-            wynik = st.Pop().ToString();
+            wynik = st.Pop().ToString(CultureInfo.CreateSpecificCulture("en-GB"));
             }
             catch(Exception e)
             {
